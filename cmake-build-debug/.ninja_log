@@ -1,0 +1,19 @@
+# ninja log v5
+9	671	7034426430194020	CMakeFiles/constructors.dir/main.cpp.obj	ba57d3596d16b74c
+399	509	7034440282749526	constructors.exe	89e8f50902969cd4
+9	468	7034453872337942	CMakeFiles/constructors.dir/Objects/User.cpp.obj	ec3411d38e9fa0a0
+0	127	7034454231317736	build.ninja	3ec5473ed801f452
+4	446	7034453872108153	CMakeFiles/constructors.dir/main/main.cpp.obj	790d763dc419ef46
+5	396	7034440281668751	CMakeFiles/constructors.dir/util/Util.cpp.obj	43501fe3280890df
+17	141	7034453869053663	CMakeFiles/constructors.dir/Objects/Admin.cpp.obj	c8df51dc904770b6
+7	933	7034454919074081	CMakeFiles/constructors.dir/main/main.cpp.obj	790d763dc419ef46
+21	979	7034454919532848	CMakeFiles/constructors.dir/Objects/User.cpp.obj	ec3411d38e9fa0a0
+3	395	7034455358600053	CMakeFiles/constructors.dir/main/main.cpp.obj	790d763dc419ef46
+3	409	7034455454504246	CMakeFiles/constructors.dir/main/main.cpp.obj	790d763dc419ef46
+5	571	7034455683334865	CMakeFiles/constructors.dir/main/main.cpp.obj	790d763dc419ef46
+11	610	7034455683739305	CMakeFiles/constructors.dir/Objects/User.cpp.obj	ec3411d38e9fa0a0
+610	825	7034455685819260	constructors.exe	5eb30a4965581b16
+4	433	7034456425316947	CMakeFiles/constructors.dir/Objects/User.cpp.obj	ec3411d38e9fa0a0
+434	553	7034456426483809	constructors.exe	5eb30a4965581b16
+11	1068	7034457268614112	CMakeFiles/constructors.dir/Objects/User.cpp.obj	ec3411d38e9fa0a0
+1068	1316	7034457271054380	constructors.exe	5eb30a4965581b16
