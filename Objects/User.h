@@ -8,6 +8,7 @@
 #include "../util/Util.h"
 #include <iostream>
 #include <vector>
+
 using std::string, std::cout, std::endl, std::cin;
 
 class User {
@@ -17,7 +18,6 @@ private:
     int age;
 public:
     User();
-
     User(const string &name, const string &surname, int age);
 
     const string &getName() const;

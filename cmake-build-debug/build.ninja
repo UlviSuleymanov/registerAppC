@@ -67,6 +67,12 @@ build CMakeFiles/constructors.dir/Objects/User.cpp.obj: CXX_COMPILER__constructo
   OBJECT_DIR = CMakeFiles\constructors.dir
   OBJECT_FILE_DIR = CMakeFiles\constructors.dir\Objects
 
+build CMakeFiles/constructors.dir/Objects/Admin.cpp.obj: CXX_COMPILER__constructors_Debug D$:/C++$ projects/constructors/Objects/Admin.cpp || cmake_object_order_depends_target_constructors
+  DEP_FILE = CMakeFiles\constructors.dir\Objects\Admin.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\constructors.dir
+  OBJECT_FILE_DIR = CMakeFiles\constructors.dir\Objects
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target constructors
@@ -75,7 +81,7 @@ build CMakeFiles/constructors.dir/Objects/User.cpp.obj: CXX_COMPILER__constructo
 #############################################
 # Link the executable constructors.exe
 
-build constructors.exe: CXX_EXECUTABLE_LINKER__constructors_Debug CMakeFiles/constructors.dir/main/main.cpp.obj CMakeFiles/constructors.dir/util/Util.cpp.obj CMakeFiles/constructors.dir/Objects/User.cpp.obj
+build constructors.exe: CXX_EXECUTABLE_LINKER__constructors_Debug CMakeFiles/constructors.dir/main/main.cpp.obj CMakeFiles/constructors.dir/util/Util.cpp.obj CMakeFiles/constructors.dir/Objects/User.cpp.obj CMakeFiles/constructors.dir/Objects/Admin.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\constructors.dir

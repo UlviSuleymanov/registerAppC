@@ -1,7 +1,13 @@
-#include <vector>
+//
+// Created by Ulvi on 17.04.2023.
+//
+
 #include "User.h"
+//big data aleminin numuneleridir.
 
 std::vector<User> users{};
+
+User::User() {}
 
 User::User(const string &name, const string &surname, int age) : name(name), surname(surname), age(age) {}
 
@@ -43,8 +49,8 @@ User fillUser() {
     string name = giveText("Enter name");
     string surname = giveText("Enter surname");
     int age = giveNumber("Enter age");
-    User user = *new User(name, surname, age);
-    return user;
+    User *user = new User(name, surname, age);
+    return *user;
 }
 
 void printUser() {
@@ -53,18 +59,28 @@ void printUser() {
     }
     for (int i = 0; i < users.size(); i++) {
         User user = users[i];
-        cout << user.getName() << " " << user.getSurname() << " " << user.getAge() << endl;
+        cout << (i + 1) << ". " << user.getName() << " " << user.getSurname() << " " << user.getAge() << endl;
     }
 }
 
 void findUserAndPrint() {
-    string text = giveText("Please enter search query");
-    std::vector<User> result = findUser(text);
+    string query = giveText("Please enter query");
+    std::vector<User> result = findUser(query);
+    if (result.empty()) {
+        cout << "No such person exsist" << endl;
+        string answer = giveText("Do you want to search new query? please answer yes or no");
+        if (answer == "yes") {
+            findUserAndPrint();
+        }
+        if (answer == "no") {
+            exit(0);
+        }
+    }
     for (int i = 0; i < result.size(); i++) {
-        cout << result[i].getName() << " " << result[i].getSurname() << " " << result[i].getAge() << endl;
+        cout << (i + 1) << ". " << result[i].getName() << " " << result[i].getSurname() << " " << result[i].getAge()
+             << endl;
     }
 }
-
 
 std::vector<User> findUser(string text) {
     std::vector<User> result{};
@@ -79,8 +95,7 @@ std::vector<User> findUser(string text) {
 
 void changeUser() {
     printUser();
-    int i = giveNumber("Which user you want to change?");
-    cout << "Please enter new data" << endl;
+    int answer = giveNumber("Which user do you want to change?");
     User user = fillUser();
-    users[i - 1] = user;
+    users[answer - 1] = user;
 }
