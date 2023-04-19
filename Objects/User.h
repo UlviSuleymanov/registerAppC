@@ -4,9 +4,10 @@
 
 #ifndef CONSTRUCTORS_USER_H
 #define CONSTRUCTORS_USER_H
+
 #include "../util/Util.h"
 #include <iostream>
-
+#include <vector>
 using std::string, std::cout, std::endl, std::cin;
 
 class User {
@@ -35,14 +36,15 @@ public:
 
 void registerUser();
 
-User *fillUser();
+User fillUser();
 
 void printUser();
 
-User *findUser();
+std::vector<User> findUser(string text);
+
+void findUserAndPrint();
 
 void changeUser();
-
 
 
 #endif //CONSTRUCTORS_USER_H

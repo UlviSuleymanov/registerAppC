@@ -1,11 +1,7 @@
-//
-// Created by Ulvi on 17.04.2023.
-//
-
+#include <vector>
 #include "User.h"
-User *users = new User[0];
 
-User::User() {}
+std::vector<User> users{};
 
 User::User(const string &name, const string &surname, int age) : name(name), surname(surname), age(age) {}
 
@@ -35,36 +31,56 @@ void User::setAge(int age) {
 
 void registerUser() {
     int count = giveNumber("How many User do you want to register");
-    User *temp = new User[count];
     for (int i = 0; i < count; i++) {
         cout << (i + 1) << ". User Register" << endl;
-        temp[i] = *fillUser();
+        users.push_back(fillUser());
     }
-    users = temp;
-    cout << "Register is completed.";
+    cout << "Register is completed." << endl;
     printUser();
 }
 
-User *fillUser() {
+User fillUser() {
     string name = giveText("Enter name");
     string surname = giveText("Enter surname");
     int age = giveNumber("Enter age");
-    User *user = new User(name, surname, age);
+    User user = *new User(name, surname, age);
     return user;
 }
 
 void printUser() {
-    if (users == 0) {
+    if (users.empty()) {
         return;
     }
-    size_t lengthArray = sizeof users / sizeof users[0];
-
-    for (int i = 0; i < lengthArray; i++) {
+    for (int i = 0; i < users.size(); i++) {
         User user = users[i];
-        cout << user.getName() << " " << user.getSurname() << user.getAge() << endl;
+        cout << user.getName() << " " << user.getSurname() << " " << user.getAge() << endl;
     }
 }
 
-User *findUser();
+void findUserAndPrint() {
+    string text = giveText("Please enter search query");
+    std::vector<User> result = findUser(text);
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i].getName() << " " << result[i].getSurname() << " " << result[i].getAge() << endl;
+    }
+}
 
-void changeUser();
+
+std::vector<User> findUser(string text) {
+    std::vector<User> result{};
+    for (int i = 0; i < users.size(); i++) {
+        User user = users[i];
+        if (user.getName().find(text) != string::npos || user.getSurname().find(text) != string::npos) {
+            result.push_back(user);
+        }
+    }
+    return result;
+}
+
+void changeUser() {
+    printUser();
+    int i = giveNumber("Which user you want to change?");
+    cout << "Please enter new data" << endl;
+    User user = fillUser();
+    users[i - 1] = user;
+}

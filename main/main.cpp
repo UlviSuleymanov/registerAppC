@@ -3,8 +3,7 @@
 
 int main() {
     int menu{0};
-    int x{0};
-    while (x < 2) {
+    while (true) {
         menu = giveNumber("What do you want to do"
                           "\n 1.Register a new User."
                           "\n 2.Show all user."
@@ -16,13 +15,12 @@ int main() {
         } else if (menu == 2) {
             printUser();
         } else if (menu == 3) {
-            cout << "Find " << endl;
+           findUserAndPrint();
         } else if (menu == 4) {
-            cout << "Change " << endl;
+            changeUser();
         } else if (menu == 5) {
             cout << "Exiting the program..." << endl;
             break;
         }
-        x++;
     }
 }
